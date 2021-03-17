@@ -1,0 +1,132 @@
+/* Universal settings */
+/* (*) This is a universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 20px;
+}
+/* Universal settings */
+.header {
+  /* It means the height will be the 95% of the view port*/
+  height: 95vh;
+  /* Setting the background image */
+  /* this code puts color on top of the image (linear-gradient(to right bottom, #d56f96b7, #b42834b7),) */
+  background-image: url(../img/forest.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 46.8%;
+}
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+.heading-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInTop;
+  animation-duration: 1s;
+  /* animation-timing-function: ease-out; */
+}
+.heading-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17px;
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  margin-bottom: 30px;
+  /* animation-timing-function: ease-out; */
+}
+/* The following code animates the text */
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  80% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling the button */
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(34, 230, 44, 0.418);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(230, 34, 34, 0.432);
+}
+
+.btn-white {
+  background-color: rgb(255, 255, 255);
+  color: #777;
+}
+
+.btn-animated {
+  animation-name: moveInBottom;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+}
